@@ -1,0 +1,53 @@
+# How to use :
+# docker-compose up -d
+# docker-compose down
+# --------------------------------------------------------------------------------
+
+version: '2'
+services:
+  nginx:
+    hostname: NGINX
+    container_name: docker_nginx
+    build: 
+      context: ./nginx
+      dockerfile: ./Dockerfile
+      args:
+        - domain=${domain}
+    volumes:
+      - ./cert/:/etc/nginx/cert/
+      - ./nginx/html:/usr/share/nginx/html
+    ports:
+      - "80:80"
+      - "8443:8443"
+    networks: 
+      vpn:
+        ipv4_address: 172.168.21.2
+    restart: on-failure
+
+
+  torrent:
+    hostname: TORRENT
+    container_name: docker_torrent
+    build: 
+      context: ./torrent
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./torrent/qBittorrent.conf:/config/qBittorrent/qBittorrent.conf
+      - ./downloads/:/downloads/
+    ports:
+      - "8080:8080"
+    networks: 
+      vpn:
+        ipv4_address: 172.168.21.3
+    restart: on-failure
+
+
+networks:
+  vpn:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet:  172.168.21.0/24
+          gateway: 172.168.21.1
+    

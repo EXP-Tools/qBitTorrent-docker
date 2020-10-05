@@ -1,0 +1,86 @@
+<!-- RELEASE TIME : 2020-08-28 03:22:12 -->
+<html lang="zh-cn">
+
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noarchive" />
+  <meta name="author" content="EXP: www.exp-blog.com" />
+  <link rel="stylesheet" type="text/css" href="./css/page.css" />
+  <title>trojan-docker</title>
+ </head>
+
+ <body class="html">
+  <div>
+
+    <table id="360" class="dataintable">
+     <tbody>
+      <tr>
+       <th width="20%">ENTRY</th>
+       <th width="80%">DETAILS</th>
+      </tr>
+      <tr>
+       <td>REPO</td>
+       <td><a href="https://github.com/lyy289065406/trojan-docker">trojan-docker</a></td>
+      </tr>
+      <tr>
+        <td>MAINTAINER</td>
+        <td><a href="https://github.com/lyy289065406">EXP</a></td>
+      </tr>
+      <tr>
+        <td>ENVIRONMENT</td>
+        <td>Linux amd64</td>
+      </tr>
+      <tr>
+        <td>STEP 01</td>
+        <td><span>python3 -m pip install certbot --default-timeout=600 -i https://pypi.tuna.tsinghua.edu.cn/simple</span></td>
+      </tr>
+      <tr>
+        <td>STEP 02</td>
+        <td><span>/usr/local/bin/certbot certonly --standalone -d demo_domain.com -d www.demo_domain.com</span></td>
+      </tr>
+      <tr>
+        <td>STEP 03</td>
+        <td><span>git clone https://github.com/lyy289065406/trojan-docker /usr/local/trojan-docker</span></td>
+      </tr>
+      <tr>
+        <td>STEP 04</td>
+        <td><span>cd /usr/local/trojan-docker</span></td>
+      </tr>
+      <tr>
+        <td>STEP 05</td>
+        <td><span>password=demo_password domain=demo_domain.com docker-compose build</span></td>
+      </tr>
+      <tr>
+        <td>STEP 06</td>
+        <td><span>./renew_cert.sh</span></td>
+      </tr>
+      <tr>
+        <td>STEP 07</td>
+        <td>把 <a href="https://github.com/lyy289065406/trojan-docker/tree/master/nginx/html">nginx/html</a> 下的内容替换为你的站点内容</td>
+      </tr>
+      <tr>
+        <td>STEP 08</td>
+        <td><span>docker-compose up -d</span></td>
+      </tr>
+      <tr>
+        <td>STEP 09</td>
+        <td><span><del>docker-compose down</del></span></td>
+      </tr>
+      <tr>
+        <td>STEP 10</td>
+        <td><span>crontab -e</span></td>
+      </tr>
+      <tr>
+        <td>STEP 11</td>
+        <td><span>0 0 1 */2 0 /bin/sh /usr/local/trojan-docker/renew_cert.sh</span></td>
+      </tr>
+     </tbody>
+    </table>
+    
+    <br/>
+
+    <img width="1000" align="left" src="imgs/trojan.png" />
+
+  </div>
+ </body>
+</html>

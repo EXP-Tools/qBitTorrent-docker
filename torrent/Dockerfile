@@ -4,14 +4,14 @@ MAINTAINER EXP
 
 ENV PUID=1000
 ENV PGID=1000
-ENV TZ=Europe/London
+ENV TZ=Aisa/Shanghai
 ENV UMASK_SET=022
 ENV WEBUI_PORT=8080
 
 RUN mkdir -p /downloads/incomplete/ && \
-    mkdir -p /config/qBittorrent/ && \
-    chmod -R a+w /config
+    mkdir -p /config/qBittorrent/
     
+ADD ./qBittorrent_new.conf /config/qBittorrent/qBittorrent_new.conf
 
 EXPOSE 8080
 EXPOSE 9000

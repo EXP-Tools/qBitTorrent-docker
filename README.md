@@ -26,3 +26,10 @@ docker 一键部署 VPS-BT 离线下载
 - password: 123456
 
 > BasicAuth 账密修改方法： 项目构建时
+
+
+
+------
+
+https://zhuanlan.zhihu.com/p/64254201
+https://github.com/ngosang/trackerslist/

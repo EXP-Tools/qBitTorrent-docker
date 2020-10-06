@@ -28,16 +28,17 @@ services:
       context: ./torrent
       dockerfile: ./Dockerfile
     volumes:
-      - ./torrent/qBittorrent.conf:/config/qBittorrent/qBittorrent.conf
       - ./downloads/:/downloads/
     ports:
       - "8080:8080"
       - "9000:9000"
-      - "8081:6881"
-      - "8081:6881/udp"
+      - "8081:8081"
+      - "8081:8081/udp"
     networks: 
       vpn:
         ipv4_address: 172.168.21.3
+    depends_on: 
+      - nginx
     restart: on-failure
 
 
@@ -58,6 +59,8 @@ services:
     networks: 
       vpn:
         ipv4_address: 172.168.21.4
+    depends_on: 
+      - torrent
     restart: on-failure
 
 

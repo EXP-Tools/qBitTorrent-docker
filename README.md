@@ -25,4 +25,4 @@ docker 一键部署 VPS-BT 离线下载
 - username: admin
 - password: 123456
 
-> 项目构建时
+> BasicAuth 账密修改方法： 项目构建时

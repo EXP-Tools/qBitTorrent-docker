@@ -1,8 +1,16 @@
+# https://hub.docker.com/r/linuxserver/qbittorrent
 FROM linuxserver/qbittorrent
 MAINTAINER EXP
 
-RUN mkdir -p /downloads/ && \
+ENV PUID=1000
+ENV PGID=1000
+ENV TZ=Aisa/Shanghai
+ENV UMASK_SET=022
+ENV WEBUI_PORT=8080
+
+RUN mkdir -p /downloads/incomplete/ && \
     mkdir -p /torrent/config/qBittorrent/
+    
 
 EXPOSE 8080
 EXPOSE 6881

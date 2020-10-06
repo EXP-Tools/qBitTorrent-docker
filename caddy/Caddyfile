@@ -1,0 +1,8 @@
+:9090 {
+    root * /downloads/
+    file_server browse
+    encode gzip
+    basicauth / {
+        admin JDJhJDE0JE5reU9GazZYeE4yQ0F2STF0OEVla09XaDgwLi51ajMwYXBQaFR0Z3V5VjVBaS5keHFJRkRh
+    }
+}

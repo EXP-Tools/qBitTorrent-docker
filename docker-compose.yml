@@ -1,5 +1,5 @@
 # How to use :
-# docker-compose up -d
+# caddy_user=admin caddy_pass=123456 docker-compose up -d
 # docker-compose down
 # --------------------------------------------------------------------------------
 
@@ -11,14 +11,8 @@ services:
     build: 
       context: ./nginx
       dockerfile: ./Dockerfile
-      args:
-        - domain=${domain}
-    volumes:
-      - ./cert/:/etc/nginx/cert/
-      - ./nginx/html:/usr/share/nginx/html
     ports:
       - "80:80"
-      - "8443:8443"
     networks: 
       vpn:
         ipv4_address: 172.168.21.2
@@ -36,9 +30,31 @@ services:
       - ./downloads/:/downloads/
     ports:
       - "8080:8080"
+      - "6881:6881"
+      - "6881:6881/udp"
     networks: 
       vpn:
         ipv4_address: 172.168.21.3
+    restart: on-failure
+
+
+  caddy:
+    hostname: CADDY
+    container_name: docker_caddy
+    build: 
+      context: ./caddy
+      dockerfile: ./Dockerfile
+      args:
+        - caddy_user=${CADDY_USER}
+        - caddy_pass=${CADDY_PASS}
+    volumes:
+      - ./caddy/Caddyfile:/usr/local/caddy/Caddyfile
+      - ./downloads/:/downloads/
+    ports:
+      - "9090:9090"
+    networks: 
+      vpn:
+        ipv4_address: 172.168.21.4
     restart: on-failure
 
 

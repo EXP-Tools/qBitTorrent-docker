@@ -1,4 +1,4 @@
-FROM caddy
+FROM caddy:latest
 MAINTAINER EXP
 
 ARG CADDY_USER=admin

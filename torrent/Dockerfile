@@ -1,5 +1,6 @@
 # https://hub.docker.com/r/linuxserver/qbittorrent
-FROM linuxserver/qbittorrent
+
+FROM linuxserver/qbittorrent:latest
 MAINTAINER EXP
 
 ENV PUID=1000

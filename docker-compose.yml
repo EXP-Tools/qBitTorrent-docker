@@ -8,10 +8,9 @@ services:
   nginx:
     hostname: NGINX
     container_name: docker_nginx
-    build: 
-      context: ./nginx
-      dockerfile: ./Dockerfile
+    image: nginx:mainline
     volumes:
+      - ./nginx/etc/bt_site.conf:/etc/nginx/conf.d/bt_site.conf
       - ./nginx/html:/usr/share/nginx/html
     ports:
       - "80:80"

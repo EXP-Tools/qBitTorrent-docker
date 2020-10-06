@@ -11,6 +11,8 @@ services:
     build: 
       context: ./nginx
       dockerfile: ./Dockerfile
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
     ports:
       - "80:80"
     networks: 

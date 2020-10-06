@@ -9,7 +9,8 @@ ENV UMASK_SET=022
 ENV WEBUI_PORT=8080
 
 RUN mkdir -p /downloads/incomplete/ && \
-    mkdir -p /torrent/config/qBittorrent/
+    mkdir -p /config/qBittorrent/ && \
+    chmod -R a+w /config
     
 
 EXPOSE 8080

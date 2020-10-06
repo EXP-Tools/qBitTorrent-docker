@@ -4,7 +4,7 @@ MAINTAINER EXP
 
 ENV PUID=1000
 ENV PGID=1000
-ENV TZ=Aisa/Shanghai
+ENV TZ=Europe/London
 ENV UMASK_SET=022
 ENV WEBUI_PORT=8080
 
@@ -13,8 +13,9 @@ RUN mkdir -p /downloads/incomplete/ && \
     
 
 EXPOSE 8080
+EXPOSE 9000
 EXPOSE 6881
 EXPOSE 6881/udp
-WORKDIR /
+WORKDIR /config
 
 CMD [ "/usr/bin/qbittorrent-nox", "--webui-port=8080" ]

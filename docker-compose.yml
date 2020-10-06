@@ -32,6 +32,7 @@ services:
       - ./downloads/:/downloads/
     ports:
       - "8080:8080"
+      - "9000:9000"
       - "8081:6881"
       - "8081:6881/udp"
     networks: 

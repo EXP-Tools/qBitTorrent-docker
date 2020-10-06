@@ -30,8 +30,8 @@ services:
       - ./downloads/:/downloads/
     ports:
       - "8080:8080"
-      - "6881:6881"
-      - "6881:6881/udp"
+      - "8081:6881"
+      - "8081:6881/udp"
     networks: 
       vpn:
         ipv4_address: 172.168.21.3

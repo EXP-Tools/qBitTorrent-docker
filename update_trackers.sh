@@ -5,7 +5,7 @@ if [ ! -z "${DOCKER_ID}" ]; then
     CFG_PATH="/config/qBittorrent/qBittorrent.conf"
     BITTORRENT_KEY="Bittorrent\\"
     TRACKERS_KEY="TrackersList="
-    TRACKERS_VAL=`curl -k https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt | xargs echo | awk '{gsub(/ /,"\\n");print}'`
+    TRACKERS_VAL=`curl -k https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_best.txt | xargs echo | awk '{gsub(/ /,"\\\\n");print}'`
 
     if [ -z "${TRACKERS_VAL}" ]; then
         echo "undo"

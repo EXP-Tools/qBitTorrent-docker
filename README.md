@@ -87,7 +87,7 @@ qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 W
 crontab -e
 
 # 每天更新一次 trackers
-0 0 1 */2 0 /bin/sh /usr/local/qBitTorrent-docker/update_trackers.sh
+0 1 * * * /bin/sh /usr/local/qBitTorrent-docker/update_trackers.sh
 ```
 
 

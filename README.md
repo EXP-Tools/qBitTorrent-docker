@@ -83,7 +83,7 @@ crontab -e
 ```
 
 
-### 4. 配置 caddy
+### 4. 使用 caddy 浏览已下载文件
 
 - 登录 WEB 页面：`http://${vps-ip}/list/` 或 `http://${vps-ip}:9090`
 - 默认 BasicAuth 登录账密: `admin / 123456`

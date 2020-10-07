@@ -51,7 +51,6 @@ services:
         - USERNAME=${caddy_user}
         - PASSWORD=${caddy_pass}
     volumes:
-      - ./caddy/Caddyfile:/usr/local/caddy/Caddyfile
       - ./downloads/:/downloads/
     ports:
       - "9090:9090"

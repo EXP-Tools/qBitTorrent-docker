@@ -61,15 +61,7 @@ qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 W
 ![](imgs/02.png)
 
 
-### 3. 配置 caddy
-
-- 登录 WEB 页面：`http://${vps-ip}/list/` 或 `http://${vps-ip}:9090`
-- 默认 BasicAuth 登录账密: `admin / 123456`
-
-> BasicAuth 的账号密码在第 1 步构建项目时已配置好
-
-
-### 4. 配置定时更新 trackers
+### 3. 配置定时更新 trackers
 
 通过 trackers 可以优化下载速度，但是 trackers 是有有效时限的，在以下地方可以获取最新的 trackers 列表：
 
@@ -89,6 +81,15 @@ crontab -e
 # 每天更新一次 trackers
 0 1 * * * /bin/sh /usr/local/qBitTorrent-docker/update_trackers.sh
 ```
+
+
+### 4. 配置 caddy
+
+- 登录 WEB 页面：`http://${vps-ip}/list/` 或 `http://${vps-ip}:9090`
+- 默认 BasicAuth 登录账密: `admin / 123456`
+
+> BasicAuth 的账号密码在第 1 步构建项目时已配置好
+
 
 
 ## FAQ

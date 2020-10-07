@@ -1,13 +1,13 @@
 FROM caddy:latest
 MAINTAINER EXP
 
-ARG CADDY_USER=admin
-ARG CADDY_PASS=123456
+ARG USERNAME=admin
+ARG PASSWORD=123456
 
 
 ADD ./Caddyfile /usr/local/caddy/Caddyfile
-RUN sed -i "s/USERNAME/${CADDY_USER}/g" /usr/local/caddy/Caddyfile
-RUN sed -i -e "s/PASSWORD/"`caddy hash-password --plaintext ${CADDY_PASS}`"/g" /usr/local/caddy/Caddyfile
+RUN sed -i "s/USERNAME/${USERNAME}/g" /usr/local/caddy/Caddyfile
+RUN sed -i -e "s/PASSWORD/"`caddy hash-password --plaintext ${PASSWORD}`"/g" /usr/local/caddy/Caddyfile
 
 RUN mkdir /downloads/
 

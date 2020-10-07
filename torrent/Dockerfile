@@ -12,7 +12,9 @@ ENV WEBUI_PORT=8080
 RUN mkdir -p /downloads/incomplete/ && \
     mkdir -p /config/qBittorrent/
     
-ADD ./qBittorrent_new.conf /config/qBittorrent/qBittorrent_new.conf
+# qBittorrent 会读取 qBittorrent_new.conf 并生成对应的 qBittorrent.conf
+# 因为会引起权限问题，不能直接挂载为 qBittorrent.conf
+ADD ./qBittorrent.conf /config/qBittorrent/qBittorrent_new.conf
 
 EXPOSE 8080
 EXPOSE 9000

@@ -45,3 +45,7 @@ https://github.com/ngosang/trackerslist/
 
 
 > 此工具只能提供 torrent种子(或种子的下载地址） 进行下载，无法直接解析 磁链或迅雷链接。 对于 磁链或迅雷链接 需要先转换为 torrent种子文件，可参考 https://my.oschina.net/u/1440553/blog/4480497 
+
+
+Bittorrent\TrackersList=udp://open.stealth.si:80/announce\nudp://tracker.uw0.xyz:6969/announce\nhttp://tracker.ipv6tracker.ru:80/announce\nudp://tracker.birkenwald.de:6969/announce\nhttp://tracker.files.fm:6969/announce\nudp://tracker.zerobytes.xyz:1337/announce
+

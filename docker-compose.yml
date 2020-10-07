@@ -48,8 +48,8 @@ services:
       context: ./caddy
       dockerfile: ./Dockerfile
       args:
-        - caddy_user=${CADDY_USER}
-        - caddy_pass=${CADDY_PASS}
+        - USERNAME=${caddy_user}
+        - PASSWORD=${caddy_pass}
     volumes:
       - ./caddy/Caddyfile:/usr/local/caddy/Caddyfile
       - ./downloads/:/downloads/

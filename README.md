@@ -4,10 +4,45 @@ docker 一键部署 VPS-BT 离线下载
 
 ------
 
+## 概要
 
-## 项目构建
+种子和磁力链接是现在使用最为广泛的资源下载形式了，但有时即使找到了种子资源，也会面临墙、网速、高额收费等限制问题，导致难以顺利下载。
 
-`caddy_user=admin caddy_pass=123456 docker-compose up -d`
+qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 Windows、Mac 和 Linux 平台，功能非常强大。
+
+通过把 qBitTorrent 部署到个人的离线 VPS，就能离线下载到 VPS，再按需从 VPS 取回本地。
+
+而一台海外的千兆带宽 VPS ，也不是月租 $5 而已（推荐 [vultr](https://www.vultr.com/)）。
+
+
+## 项目说明
+
+本仓库包含三个 docker 镜像：
+
+| docker 镜像 | 用途 | 服务端口 | 端口说明 |
+|:------:|:------:|:------:|:------:|
+| qBitTorrent | 用于 BT 下载资源到 VPS | 8080 | WEB 管理界面 |
+| - | - | 8081 | 用于 P2P 连接的最小端口，默认是 6881(-6889)<br/>但是 6881 已被大部分资源站拉黑，故设置为另一个最小端口 |
+| - | - | 9000 | 用于内部共享私有种子的端口 |
+| caddy | 用于浏览 VPS 上已下载的资源文件，并拉回本地 | 9090 | xxx |
+| nginx | 反向代理 qBitTorrent 和 caddy 服务 | 80 | 项目说明页面 |
+
+
+## 环境要求
+
+![](https://img.shields.io/badge/Platform-Linux%20amd64-brightgreen.svg)
+
+
+
+## 部署步骤
+
+### 1. 项目构建
+
+- 宿主机安装 docker、docker-compose
+- 构建镜像并运行： `caddy_user=admin caddy_pass=123456 docker-compose up -d`
+
+> caddy 的账号密码按需设置即可
+
 
 
 ## qBitTorrent： BT 离线下载管理页面

@@ -1,6 +1,6 @@
 # qBitTorrent-docker
 
-docker 一键部署 VPS-BT 离线下载
+> docker 一键部署 VPS-BT 离线下载
 
 ------
 

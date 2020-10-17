@@ -16,8 +16,6 @@ qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 W
 
 ![](imgs/03.png)
 
-![](imgs/04.png)
-
 
 ## 项目说明
 
@@ -94,7 +92,7 @@ crontab -e
 
 > BasicAuth 的账号密码在第 1 步构建项目时已配置好
 
-
+![](imgs/04.png)
 
 ## FAQ
 

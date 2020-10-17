@@ -14,6 +14,10 @@ qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 W
 
 而一台海外的千兆带宽 VPS ，也不是月租 $5 而已（推荐 [vultr](https://www.vultr.com/)）。
 
+![](imgs/03.png)
+
+![](imgs/04.png)
+
 
 ## 项目说明
 

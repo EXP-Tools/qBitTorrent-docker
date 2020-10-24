@@ -10,7 +10,7 @@
 
 qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 Windows、Mac 和 Linux 平台，功能非常强大。
 
-通过把 qBitTorrent 部署到个人的离线 VPS，就能离线下载到 VPS，再按需从 VPS 取回本地。
+通过把 qBitTorrent 部署到个人的 VPS，就能离线下载到 VPS，再按需从 VPS 取回本地。
 
 而一台海外的千兆带宽 VPS ，也不是月租 $5 而已（推荐 [vultr](https://www.vultr.com/)）。
 
